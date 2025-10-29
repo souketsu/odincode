@@ -1,0 +1,29 @@
+.pink {
+    background-color: pink;
+    font-family: Verdana,"DejaVu Sans",sans-serif;
+}
+.blue {
+    color: blue;
+    font-size: 34px;
+}
+.set-size {
+    font-size: 24px;
+    color: blue;
+}
+.green {
+    background-color: lightgreen;
+    font-size: 24px;
+    font-weight: bold;
+}
+.bk
+.yl {
+    font-size: 28px;
+    font-family: Helvetica, "Times New Roman", sans-serif;
+}
+.bk {
+    background-color: black;
+    color: white;
+}
+.yl {
+    background-color: yellow;
+}
