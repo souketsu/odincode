@@ -1,3 +1,4 @@
+/* ID选择器与类选择器 CSS */
 .pink {
     background-color: pink;
     font-family: Verdana,"DejaVu Sans",sans-serif;
@@ -15,6 +16,7 @@
     font-size: 24px;
     font-weight: bold;
 }
+/* 组合选择器CSS */
 .bk
 .yl {
     font-size: 28px;
@@ -26,4 +28,31 @@
 }
 .yl {
     background-color: yellow;
+}
+/* 链选择器CSS */
+.avatar.proportioned {
+    width: 200px;
+    height: auto;
+}
+
+.avatar.distorted {
+    width: 200px;
+    height: 400px;
+}
+
+.original.proportioned {
+    width: auto;
+    height: auto;
+}
+.original.distorted {
+    width: auto;
+    height: 400px;
+}
+
+/* 后代选择器CSS */
+.container .text {
+    background-color: yellow;
+    text-align: center;
+    font-size: 20px;
+    color: red;
 }
