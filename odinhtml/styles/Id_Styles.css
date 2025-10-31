@@ -56,3 +56,15 @@
     font-size: 20px;
     color: red;
 }
+
+.css-box1 {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.css-box2 {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+}
