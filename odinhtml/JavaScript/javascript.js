@@ -32,3 +32,7 @@ let percentage = actual / max
 console.log(percentage);
 console.log("sddd" + 100);
 
+let txt = "hello world";
+let noet = "长度为"
+let snl = txt.length
+console.log(noet + snl);
