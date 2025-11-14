@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>剪刀石头布</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-    </style>
-     <script src="./JavaScript/RSC_Run.js"></script>
+    <style rel="stylesheet" href="./RPS_CSS.css"></style>
 </head>
 <body>
     <h1>剪刀石头布</h1>
+    <form>
+        <label for = "playerName" id = "playerNameLabel">玩家姓名：</label>
+        <input type="text" id="playerName" name="playerName" placeholder="请输入您的姓名" required>
+        <button type="button" onclick="startGame()">开始游戏</button>
+    </form>
+    <div id="gameArea">
+        <button  type="button">石头</button>
+        <button  type="button">布</button>
+        <button  type="button">剪刀</button>
+    </div>
+    <div id="roundArea">
+        <label id = "playerScoreLabel">玩家得分：</label>
+        <label id = "serverScoreLabel">电脑得分：</label>
+        <label id = "roundLabel">当前轮数：</label>
+    </div>
+    <script src="./JavaScript/RPS-UI.js"></script>
 </body>
 </html>

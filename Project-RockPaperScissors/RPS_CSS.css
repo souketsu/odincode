@@ -1,0 +1,60 @@
+ body {
+     font-family: Arial, sans-serif;
+     max-width: 600px;
+     margin: 0 auto;
+     padding: 20px;
+ }
+
+ h1 {
+     color: #333;
+     text-align: center;
+ }
+
+ form {
+     margin-bottom: 20px;
+     text-align: center;
+ }
+
+ #gameArea {
+     text-align: center;
+     margin-bottom: 20px;
+ }
+
+ #gameArea button {
+     margin: 0 10px;
+     padding: 10px 20px;
+     font-size: 16px;
+ }
+
+ #roundArea {
+     text-align: center;
+     margin-top: 20px;
+ }
+
+ #roundResult {
+     margin-top: 10px;
+     font-weight: bold;
+     color: #333;
+ }
+
+ label {
+     display: block;
+     margin: 10px 0;
+ }
+
+ input {
+     padding: 8px;
+     margin-right: 10px;
+ }
+
+ button {
+     padding: 8px 16px;
+     background-color: #4CAF50;
+     color: white;
+     border: none;
+     cursor: pointer;
+ }
+
+ button:hover {
+     background-color: #45a049;
+ }
