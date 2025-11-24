@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>我的购物清单</h1>
+    <form>
+      <label for="item">增加一个新清单:</label>
+      <input type="text" name="item" id="item">
+      <button type="button">增加清单</button>
+    </form>
+    <ul>
+    </ul>
+    <script>
+      const form = document.querySelector('form');
+      const input = document.querySelector('#item');
+      const ulList = document.querySelector('ul');
+            const button = document.querySelector('button'); // 获取按钮元素
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); // 阻止按钮点击的默认行为
+                const itemText = input.value;
+                if (itemText !== '') { // 检查输入框是否为空
+                const li = document.createElement('li');
+                const listSpan = document.createElement('span'); // 将输入框的值作为列表项的文本内容
+                listSpan.textContent = itemText;
+                li.appendChild(listSpan);
+                ulList.appendChild(li);
+                input.value = ''; // 清空输入框
+                 input.focus(); // 聚焦输入框准备输入下一个购物项
+                 const delButton = document.createElement('button'); // 创建一个删除按钮
+                 delButton.textContent = '删除';
+                 li.appendChild(delButton);
+                 delButton.addEventListener('click', function() {
+                    ulList.removeChild(li);
+                 });
+                }
+            });
+    </script>
+  </body>
+</html>
