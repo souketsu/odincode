@@ -1,0 +1,51 @@
+/* General setup */
+/* 导入 Science Gothic 字体 */
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+
+
+html {
+    font-size: 10px;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Typography */
+
+h1 {
+    font-size: 3.2rem;
+    font-family: 'kaushan_scriptregular', sans-serif;
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-family: 'kaushan_scriptregular', sans-serif;
+}
+
+p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    word-spacing: 0.6rem;
+    font-family: "Science Gothic",'source_sans_problack', sans-serif;
+}
+
+@font-face {
+    font-family: 'kaushan_scriptregular';
+    src: url('font/kaushanscript-regular-webfont.woff2') format('woff2'),
+        url('font/kaushanscript-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'source_sans_problack';
+    src: url('font/sourcesanspro-black-webfont.woff2') format('woff2'),
+        url('font/sourcesanspro-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
