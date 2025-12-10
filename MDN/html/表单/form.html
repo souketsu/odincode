@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+        /* 居中表单 */
+        margin: 0 auto;
+        width: 400px;
+        /* 显示表单的轮廓 */
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 1em;
+        }
+
+        ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+
+        form li + li {
+        margin-top: 1em;
+        }
+
+        label {
+        /* 确保所有 label 大小相同并正确对齐 */
+        display: inline-block;
+        width: 90px;
+        text-align: right;
+        }
+
+        input,
+        textarea {
+        /* 确保所有文本输入框字体相同
+            textarea 默认是等宽字体 */
+        font: 1em sans-serif;
+
+        /* 使所有文本输入框大小相同 */
+        width: 300px;
+        box-sizing: border-box;
+
+        /* 调整文本输入框的边框样式 */
+        border: 1px solid #999;
+        }
+
+        input:focus,
+        textarea:focus {
+        /* 给激活的元素一点高亮效果 */
+        border-color: #000;
+        }
+
+        textarea {
+        /* 使多行文本输入框和它们的 label 正确对齐 */
+        vertical-align: top;
+
+        /* 给文本留下足够的空间 */
+        height: 5em;
+        }
+
+        .button {
+        /* 把按钮放到和文本输入框一样的位置 */
+        padding-left: 90px; /* 和 label 的大小一样 */
+        }
+
+        button {
+        /* 这个外边距的大小与 label 和文本输入框之间的间距差不多 */
+        margin-left: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <p>This is my page</p>
+    <form action="/my-handling-form-page" method="post">
+        <ul>
+            <li>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name">
+            </li>
+            <li>
+                <label for="mail">Email:</label>
+                <input type="email" id="mail" name="user_email">
+            </li>
+            <li>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="user_message">by default this element is filled with this text</textarea>
+            </li>
+             <li class="button">
+                <button type="submit">Send your message</button>
+            </li>
+        </ul>
+
+        <!-- 付款表单 -->
+        <h1>付款表单</h1>
+        <p>
+        必需的字段已使用 <strong><span aria-label="required">*</span></strong> 标示。
+        </p>
+        <section>
+        <h2>联系人信息</h2>
+        <fieldset>
+            <legend>称号</legend>
+            <ul>
+            <li>
+                <label for="title_1">
+                <input type="radio" id="title_1" name="title" value="A" />
+                Ace
+                </label>
+            </li>
+            <li>
+                <label for="title_2">
+                <input type="radio" id="title_2" name="title" value="K" />
+                King
+                </label>
+            </li>
+            <li>
+                <label for="title_3">
+                <input type="radio" id="title_3" name="title" value="Q" />
+                Queen
+                </label>
+            </li>
+            </ul>
+        </fieldset>
+        <p>
+            <label for="name">
+            <span>名字：</span>
+            <strong><span aria-label="必须">*</span></strong>
+            </label>
+            <input type="text" id="name" name="username" required />
+        </p>
+        <p>
+            <label for="mail">
+            <span>邮箱：</span>
+            <strong><span aria-label="必须">*</span></strong>
+            </label>
+            <input type="email" id="mail" name="usermail" required />
+        </p>
+        <p>
+            <label for="pwd">
+            <span>密码：</span>
+            <strong><span aria-label="必须">*</span></strong>
+            </label>
+            <input type="password" id="pwd" name="password" required />
+        </p>
+        </section>
+        <section>
+        <h2>付款信息</h2>
+        <p>
+            <label for="card">
+            <span>信用卡类型</span>
+            </label>
+            <select id="card" name="usercard">
+            <option value="visa">Visa</option>
+            <option value="mc">Mastercard</option>
+            <option value="amex">American Express</option>
+            </select>
+        </p>
+        <p>
+            <label for="number">
+            <span>卡号：</span>
+            <strong><span aria-label="required">*</span></strong>
+            </label>
+            <input type="tel" id="number" name="cardnumber" required />
+        </p>
+        <p>
+            <label for="expiration">
+            <span>到期日：</span>
+            <strong><span aria-label="required">*</span></strong>
+            </label>
+            <input
+            type="text"
+            id="expiration"
+            name="expiration"
+            required
+            placeholder="MM/YY"
+            pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$" />
+        </p>
+        </section>
+        <section>
+        <p>
+            <button type="submit">验证付款请求</button>
+        </p>
+        </section>
+    </form>
+</body>
+</html>
