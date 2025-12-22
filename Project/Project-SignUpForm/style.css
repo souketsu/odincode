@@ -1,0 +1,201 @@
+/* 导入自定义字体 */
+@font-face {
+    font-family: 'Norse Bold';
+    src: url('Norse-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    height: 100vh;
+}
+
+/* 主容器 */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* 左侧图片区域 */
+.image-container {
+    position: relative;
+    width: 40%;
+    min-width: 300px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Logo区域 */
+.logo-container {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 0;
+}
+
+.logo-icon {
+    width: 60px;
+    height: 80px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="white"><circle cx="50" cy="50" r="45"/><path d="M30,30 L70,30 L70,40 L30,40 Z"/><path d="M30,50 L70,50 L70,60 L30,60 Z"/><path d="M30,70 L70,70 L70,80 L30,80 Z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-family: 'Norse Bold', sans-serif;
+    color: white;
+    font-size: 4rem;
+}
+
+/* 图片版权信息 */
+.photo-credit {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 0.8rem;
+}
+
+/* 右侧表单区域 */
+.form-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 介绍文本 */
+.intro-section {
+    padding: 100px 50px 30px;
+    background-color: #f9f9f9;
+    font-weight: 500;
+}
+
+.intro-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+/* 表单区域 */
+.form-section {
+    padding: 20px 50px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+}
+
+/* 表单行和组 */
+.form-row {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: blue;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.2);
+}
+
+/* 密码输入框特殊样式 */
+/* 移除旧的密码输入框特殊样式 */
+/* 注释掉或删除这部分代码
+.form-row:nth-child(3) .form-group input {
+    border-color: #ff0000;
+}
+*/
+
+/* 表单验证样式 */
+/* 当输入框获得焦点且内容无效时显示红色边框 */
+.form-group input:focus:invalid {
+    border-color: #ff0000;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+}
+
+/* 当输入框内容有效时显示绿色边框 */
+.form-group input:valid {
+    border-color: #10b981;
+}
+
+/* 确保未聚焦且未交互的输入框保持默认样式 */
+.form-group input {
+    transition: border-color 0.3s ease;
+}
+
+/* 提交区域 */
+.submit-section {
+    padding: 30px 50px 50px;
+    background-color: #f9f9f9;
+}
+
+.submit-section button {
+    background-color: #596D48;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.submit-section button:hover {
+    background-color: #4c5e3c;
+}
+
+.submit-section p {
+    font-size: 0.9rem;
+}
+
+.submit-section a {
+    color: #596D48;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.submit-section a:hover {
+    text-decoration: underline;
+}

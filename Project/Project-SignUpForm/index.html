@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧图片区域 -->
+        <div class="image-container">
+            <img src="中国风建筑.jpg" alt="Background Image">
+            <div class="logo-container">
+                <div class="logo-icon"></div>
+                <span class="logo-text">ODIN</span>
+            </div>
+            <div class="photo-credit">
+                Photo by Hailee West on Unsplash
+            </div>
+        </div>
+        <!-- 右侧表单区域 -->
+        <div class="form-container">
+            <div class="intro-section">
+                <p>This is not a real online service! You know you need something
+                like this in your life to help you realize your deepest dreams.
+                Sign up now to get started.</p>
+                <p>You know you want to.</p>
+            </div>
+            <div class="form-section">
+                <h2>Let's do this!</h2>
+                <form action="#" method="POST" id="signup-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">FIRST NAME</label>
+                            <input type="text" id="first-name" name="first-name" required placeholder="Enter your first name">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">LAST NAME</label>
+                            <input type="text" id="last-name" name="last-name" required placeholder="Enter your last name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email" required placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">PHONE NUMBER</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="123-456-7890">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">PASSWORD</label>
+                            <input type="password" id="password" name="password" required placeholder="Enter your password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">CONFIRM PASSWORD</label>
+                            <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="submit-section">
+                <button type="submit" form="signup-form">Create Account</button>
+                <p>Already have an account? <a href="#">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
