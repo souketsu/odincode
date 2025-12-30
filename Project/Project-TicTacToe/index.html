@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="gameContainer">
+      <h1>井字棋</h1>
+      <div id="inputPlayerName">
+        <label for="player1Name">玩家 1 名称:</label>
+        <input type="text" id="player1Name" />
+        <label for="player2Name">玩家 2 名称:</label>
+        <input type="text" id="player2Name" />
+        <button id="savePlayerNameBtn">保存玩家名称</button>
+      </div>
+      <div id="gameStatus">
+        <p id="playerTurn"></p>
+        <p id="gameResult"></p>
+      </div>
+
+      <div id="gameBoard" class="board">
+        <div class="cell" id="cell0"></div>
+        <div class="cell" id="cell1"></div>
+        <div class="cell" id="cell2"></div>
+        <div class="cell" id="cell3"></div>
+        <div class="cell" id="cell4"></div>
+        <div class="cell" id="cell5"></div>
+        <div class="cell" id="cell6"></div>
+        <div class="cell" id="cell7"></div>
+        <div class="cell" id="cell8"></div>
+      </div>
+
+      <button id="restartBtn">重新开始</button>
+    </div>
+  </body>
+  <script src="JavaScript/main.js"></script>
+</html>
