@@ -1,0 +1,22 @@
+{
+  "name": "project-restaurantpage",
+  "version": "1.0.0",
+  "description": "这是一份关于 **The Odin Project（奥丁项目）—— 餐厅页面项目** 的中文翻译指南。该项目的核心目标是练习使用 **JavaScript 动态渲染 DOM** 以及使用 **Webpack** 进行模块化开发。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.5",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
