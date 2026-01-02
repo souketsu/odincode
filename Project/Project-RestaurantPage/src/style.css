@@ -1,0 +1,203 @@
+/* 1. 核心定义与配色 (CSS Variables) */
+/* 使用变量可以方便地在一处修改，全站生效 */
+:root {
+    --primary: #1a1a1a;
+    /* 主色调：深黑色，用于标题和重要按钮 */
+    --accent: #d4a373;
+    /* 强调色：香槟金，用于边框和装饰，提升高级感 */
+    --text: #333333;
+    /* 正文颜色 */
+    --bg-light: #fefae0;
+    /* 背景色：米白色，比纯白更温润 */
+    --white: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* 全局统一的平滑过渡效果 */
+}
+
+/* 基础重置：消除浏览器默认间距，确保尺寸计算准确 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    /* 使用衬线体，营造西餐厅的优雅氛围 */
+    background-color: var(--bg-light);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+/* 总容器：控制内容最大宽度并水平居中 */
+#content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* 2. 导航栏 (Header) 装饰 */
+.home-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.home-header h1 {
+    font-size: 3.5rem;
+    color: var(--primary);
+    letter-spacing: 4px;
+    /* 字间距拉开，更有品牌感 */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* 导航按钮基础样式 */
+.home-btn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    padding: 10px 25px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 按钮悬停效果：反色切换 */
+.home-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* 3. 首页 (Home) 装饰 */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-out;
+    /* 进入页面时渐显 */
+}
+
+.home-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.home-container img {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    object-fit: cover;
+    /* 保证图片在不拉伸的情况下填满容器 */
+    border-radius: 4px;
+    /* 艺术感偏移投影：使用强调色金边作为背景阴影 */
+    box-shadow: 20px 20px 0px var(--accent);
+    margin-bottom: 40px;
+}
+
+.home-container p {
+    max-width: 600px;
+    font-size: 1.2rem;
+    font-style: italic;
+    /* 斜体增加文学气息 */
+}
+
+/* 4. 菜单页 (Menu) 网格布局 */
+.menu-container {
+    display: grid;
+    /* 响应式网格：列宽最小 300px，自动填充剩余空间 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    animation: slideUp 0.8s ease-out;
+    /* 菜单页特有的向上滑动进入效果 */
+}
+
+/* 特殊处理：让菜单标题跨越网格的所有列 */
+.menu-container h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3rem;
+}
+
+/* 菜品卡片样式 */
+.menu-item {
+    background: var(--white);
+    padding: 30px;
+    border-left: 5px solid var(--accent);
+    /* 左侧金边装饰 */
+    transition: var(--transition);
+}
+
+/* 卡片悬停：向上微动并显示阴影 */
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-item p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 5. 关于页 (About) 装饰 */
+.about-container {
+    background: var(--white);
+    padding: 60px;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.05);
+}
+
+.about-container h1 {
+    margin-bottom: 30px;
+    color: var(--accent);
+}
+
+/* 6. 动画关键帧定义 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 7. 交互状态样式 */
+/* 被激活按钮的样式（由 index.js 动态添加） */
+.active-btn {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--accent);
+    /* 激活时加个金边突出 */
+}
+
+/* 给每次切换后的新内容添加统一的渐入动画 */
+#main-display>main {
+    animation: fadeIn 0.5s ease-in-out;
+}
