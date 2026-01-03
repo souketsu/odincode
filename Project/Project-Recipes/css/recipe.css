@@ -1,0 +1,247 @@
+:root {
+  --primary: #ff4d00;
+  --primary-light: #ff824d;
+  --secondary: #2d3436;
+  --accent: #00b894;
+  --bg: #fafafa;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.9);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", "Noto Serif SC", serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.7);
+  transition: var(--transition);
+}
+
+.hero:hover .hero-img {
+  transform: scale(1.05);
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 1;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: -60px auto 60px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Content Sections */
+section {
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+h2::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary), transparent);
+}
+
+/* Ingredients */
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.ingredient-item {
+  background: var(--white);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ingredient-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+  color: var(--primary);
+}
+
+.ingredient-item i {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+/* Steps */
+.steps {
+  list-style: none;
+}
+
+.step-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 30px;
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.step-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(255, 77, 0, 0.3);
+}
+
+.step-content p {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+/* Navigation */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 600;
+  transition: var(--transition);
+  margin-top: 20px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+  background: rgba(255, 77, 0, 0.1);
+  transform: translateX(-5px);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .card {
+    padding: 30px;
+  }
+  .ingredients-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

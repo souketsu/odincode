@@ -1,0 +1,75 @@
+:root {
+    --primary: #FF4D00;
+    --primary-dark: #D34100;
+    --accent: #FFB800;
+    --bg-dark: #121212;
+    --bg-card: #1E1E1E;
+    --text-main: #FFFFFF;
+    --text-dim: #A0A0A0;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+    --shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', 'Noto Serif SC', serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* Common Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography Gradient */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Luxury Button/Link */
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(10px);
+}
+
+.btn-premium:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 77, 0, 0.3);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

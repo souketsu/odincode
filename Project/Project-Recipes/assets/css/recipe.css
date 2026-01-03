@@ -1,0 +1,150 @@
+/* Recipe Details Specific Styles */
+
+.hero-section {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, var(--bg-dark), transparent);
+}
+
+.hero-title {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    animation: slideUp 1s ease-out;
+}
+
+.recipe-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.stat-item span:first-child {
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Content Grid */
+.recipe-main {
+    margin-top: -100px;
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    gap: 40px;
+    padding-bottom: 100px;
+}
+
+@media (max-width: 968px) {
+    .recipe-main { grid-template-columns: 1fr; margin-top: 0; }
+}
+
+/* Sidebar Ingredients */
+.ingredients-sidebar {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 32px;
+    height: fit-content;
+    position: sticky;
+    top: 40px;
+    border: 1px solid var(--border);
+}
+
+.ingredient-list {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.ingredient-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Cooking Steps */
+.cooking-steps {
+    padding: 40px;
+}
+
+.step-card {
+    background: var(--bg-card);
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 32px;
+    border: 1px solid var(--border);
+    transition: var(--transition-smooth);
+}
+
+.step-card:hover {
+    transform: scale(1.02);
+    border-color: var(--primary);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.step-num {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.step-body p {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+}
+
+.step-body p strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
