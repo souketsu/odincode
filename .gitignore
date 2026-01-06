@@ -2,3 +2,14 @@
 node_modules
 dist
 .DS_Store
+
+# Electron build output
+out
+dist-electron
+
+# Capacitor/Android
+# 我们保留 android/ 文件夹本身，但忽略其中由 IDE 生成的构建缓存
+android/app/build
+android/.gradle
+
+out

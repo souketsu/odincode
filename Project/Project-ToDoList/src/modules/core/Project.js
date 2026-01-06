@@ -16,6 +16,9 @@ export class Project {
     this.isDeletable = isDeletable;
   }
 
+  getTodo(id) {
+    return this.todos.find((todo) => todo.id === id);
+  }
   /**
    * 向清单中添加一个任务
    * @param {Todo} todo - Todo 类的实例

@@ -53,3 +53,61 @@
 ---
 
 **你想让我帮你先构思一下这个项目的模块结构（文件夹和文件划分），还是先写一个基础的 Todo 类代码示例？**
+
+---
+
+## 📦 打包与发布指南 (Build & Release)
+
+本项目支持多种打包方式，覆盖 Web、桌面端 (Windows) 和 Android 平台。
+
+### 1. Web 网页版
+
+生成优化后的静态文件，部署到服务器。
+
+```bash
+npm run build
+# 生成文件位于 ./dist 目录
+```
+
+### 2. Windows 桌面版 (绿色免安装)
+
+生成便携式文件夹，解压即用，适合快速分享。
+
+```bash
+npm run make
+# 生成文件位于 ./out/make/zip/win32/x64/
+```
+
+### 3. Windows 桌面版 (安装程序)
+
+生成专业的 `.exe` 安装向导，带有桌面快捷方式。
+
+```bash
+npm run dist
+# 生成文件位于 ./dist-electron/
+```
+
+### 4. Android 安卓版
+
+将 Web 应用封装为原生 APK。
+
+```bash
+# 1. 每次修改网页代码后，先重新构建
+npm run build
+
+# 2. 同步代码到安卓项目
+npx cap sync
+
+# 3. 打开 Android Studio 进行打包 APK
+npx cap open android
+```
+
+---
+
+
+## 未来规划 (Roadmap)
+
+- [ ] **数据存储迁移**：从 `localStorage` 迁移到 `IndexedDB`，以支持更大量的数据存储和异步操作。
+- [ ] **数据导出/导入**：实现 JSON 格式的数据导出与导入功能。
+- [ ] **云同步**：实现多端数据同步功能。
+- [ ] **标签系统**：支持给任务添加多重标签。

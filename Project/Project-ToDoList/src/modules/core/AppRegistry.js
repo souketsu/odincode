@@ -1,4 +1,5 @@
 import { Project } from "./Project";
+import { loadFromStorage, saveToStorage } from "../storage/localStorage";
 
 export class AppRegistry {
   constructor() {
@@ -8,9 +9,9 @@ export class AppRegistry {
 
   static initialize() {
     // 尝试从 LocalStorage 加载
-    const savedData = localStorage.getItem("todo_app_data");
+    const savedData = loadFromStorage();
     if (savedData) {
-      return AppRegistry.fromJSON(JSON.parse(savedData));
+      return AppRegistry.fromJSON(savedData);
     }
 
     const registry = new AppRegistry();
@@ -21,7 +22,7 @@ export class AppRegistry {
   }
 
   save() {
-    localStorage.setItem("todo_app_data", JSON.stringify(this));
+    saveToStorage(this);
   }
 
   addProject(project) {
@@ -50,6 +51,10 @@ export class AppRegistry {
 
   getProjects() {
     return this.projects;
+  }
+
+  getCurrentProject() {
+    return this.getProject(this.currentProjectId);
   }
 
   static fromJSON(json) {
