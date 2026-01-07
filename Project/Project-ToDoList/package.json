@@ -1,4 +1,5 @@
 {
+  "node": "^22.12.0",
   "name": "project-todolist",
   "version": "1.0.0",
   "description": "这是来自 **The Odin Project**（奥丁项目）中关于 **Todo List（待办事项清单）** 项目的中文翻译指南。",
