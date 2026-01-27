@@ -1,15 +1,141 @@
-.vscode
-node_modules
-dist
+# ==========================================
+# 全平台应用开发模板 (Production Ready)
+# 涵盖: React/Vite + Tauri v2 + Electron + Capacitor
+# ==========================================
+
+# ---------------------------------------------------------
+# 1. 前端基础 (Node.js & Vite)
+# ---------------------------------------------------------
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.*.local
+!.env.example
+*.timestamp-*
+.eslintcache
+.stylelintcache
+coverage/
+test-results/
+*.tgz
+*.zip
+*.7z
+*.bak
+*.tmp
+*.temp
+
+# ---------------------------------------------------------
+# 2. 桌面端: Tauri v2 (Rust 核心)
+# ---------------------------------------------------------
+# Rust 编译产物（体积巨大，绝对不提交）
+src-tauri/target/
+
+# Tauri v2 自动生成的移动端原生代码
+# 逻辑：通常由 `tauri android init` 生成，建议不提交，由开发者环境生成
+src-tauri/gen/
+src-tauri/binaries/
+
+# 签名密钥 (SECURITY RISK!)
+src-tauri/*.key
+src-tauri/*.key.pub
+src-tauri/sign.key
+
+# Tauri 打包安装包产物
+src-tauri/bundle/
+*.msi
+*.msi.zip
+*.msi.zip.sig
+*.dmg
+*.dmg.sig
+*.deb
+*.rpm
+*.AppImage
+
+# ---------------------------------------------------------
+# 3. 桌面端: Electron
+# ---------------------------------------------------------
+# 构建输出
+release/
+out/
+dist-electron/
+dist_electron/
+dist_electron_win/
+dist_electron_mac/
+dist_electron_linux/
+*.blockmap
+builder-effective-config.yaml
+
+# ---------------------------------------------------------
+# 4. 移动端: Capacitor (iOS & Android)
+# ---------------------------------------------------------
+# 核心原则：不忽略原生目录，但忽略其中的构建缓存和个人配置
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/captures/
+android/.idea/
+android/*.iml
+
+ios/App/build/
+ios/App/Pods/
+ios/App/Podfile.lock
+ios/App/.xcworkspace/xcuserdata/
+ios/DerivedData/
+
+# Capacitor 插件产生的临时文件
+capacitor-cordova-android-plugins/
+capacitor-cordova-ios-plugins/
+
+# ---------------------------------------------------------
+# 5. 跨平台持久化 (IndexedDB/Dexie & Local)
+# ---------------------------------------------------------
+# 开发环境下可能的本地存储映射
+.storage/
+.db
+*.db-journal
+*.sqlite*
+*.json.export
+.crossnote/
+.history/
+
+# ---------------------------------------------------------
+# 6. 系统与 IDE (macOS, Windows, VS Code)
+# ---------------------------------------------------------
 .DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
 
-# Electron build output
-out
-dist-electron
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
 
-# Capacitor/Android
-# 我们保留 android/ 文件夹本身，但忽略其中由 IDE 生成的构建缓存
-android/app/build
-android/.gradle
+.idea/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
 
-out
+# ---------------------------------------------------------
+# 7. 证书与密钥 (全平台安全)
+# ---------------------------------------------------------
+*.keystore
+*.jks
+*.p12
+*.p8
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
+
+# ---------------------------------------------------------
+# 8. 日志与崩溃报告
+# ---------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
